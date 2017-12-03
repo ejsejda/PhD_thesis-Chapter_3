@@ -1,5 +1,8 @@
 #######################################################################################
 ###  This script was used to produce picture of MCL clusters or single MCL cluster  ###
+###  It uses output files created with python scripts:                              ###
+###                                     gettingHostTaxa_fromPHIbase_4.0.py          ###
+###                                     analysisOfPHIbase_v4.0.py                   ###
 #######################################################################################
 
 from numpy import *
@@ -37,7 +40,7 @@ def getColorandSize(nodes, d, s):
     	return colorList, sizeList
 	
 fileName1="MCL_1.6_OutputModified.txt" % (projectDir1) #output file from MCL clustering
-fileName2="phiBase_version4.0_content.txt" % (projectDir1)#file created with script: gettingHostTaxa.py
+fileName2="phiBase_version4.0_content.txt" % (projectDir1)#file created with script: gettingHostTaxa_fromPHIbase_4.0.py
 fileName3="pathClassOnGeneId_PHIid_phiBase_4.0.csv.csv" % (projectDir1) #file created with script: analysisOfPHIbase_v4.0.py
 #Read the cluster information into an array
 data1=loadtxt(fileName1, dtype='S')
