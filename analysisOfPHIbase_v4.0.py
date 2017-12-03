@@ -3,6 +3,11 @@ Created on 11 May 2010
 
 @author: janowska
 '''
+############################################################################################################
+###   This program uses as input file the file created with "gettingHostTaxa_fromPHIbase_4.0.py", namely  ###
+###   input file: "phiBase_version4.0_content.txt". Then, the number of hosts and genes are calculated   ###
+###   for particular species belonging to either plant, animal or other pathogens.                       ###
+############################################################################################################
 from numpy import *
 import csv
 
@@ -70,7 +75,8 @@ for r in rows:
     writer.writerow(r)
 fh.close()
 
-
+#In the output file the number of hosts that particular pathogen interacts is calculated per each PHI-base entry.
+#The information from this file is used in MCL cluster display (in "displayMCLclusters.py")
 fh = open("/home/janowska/Projects/PHI-base/pathClassOnGeneId_PHIid_phiBase_4.0.csv", "w")
 writer=csv.writer(fh, delimiter=";")
 rows=[(i,len(dHostTaxaId[i])) for i in sort(dHostTaxaId.keys())]
